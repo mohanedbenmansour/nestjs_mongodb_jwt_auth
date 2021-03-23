@@ -47,4 +47,8 @@ export class UserService {
       private sanitizeUser(user: User) {
         return user.depopulate('password');
       }
+
+      async findAllUsers(){
+        return this.userModel.find({});
+      }
 }
