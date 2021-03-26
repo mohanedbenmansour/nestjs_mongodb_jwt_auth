@@ -1,4 +1,3 @@
-import { User } from 'src/types/user';
 
 export interface RegisterDTO {
 

@@ -25,8 +25,8 @@ return  "this can be seen by anyone";
 }
 
     @Post('register')
-    async register(@Body() UserDTO: RegisterDTO) {
-      const user = await this.userService.create(UserDTO);
+    async register(@Body() registerDTO: RegisterDTO) {
+      const user = await this.userService.create(registerDTO);
       const payload = {
       
         email: user.email,
@@ -36,8 +36,8 @@ return  "this can be seen by anyone";
       return { user, token };
     }
     @Post('login')
-    async login(@Body() UserDTO: LoginDTO) {
-      const user = await this.userService.findByLogin(UserDTO);
+    async login(@Body() loginDTO: LoginDTO) {
+      const user = await this.userService.findByLogin(loginDTO);
       const payload = {
         email: user.email,
       };
